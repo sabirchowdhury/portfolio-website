@@ -4,6 +4,7 @@ import { AutoAwesome, DarkMode, LightMode } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import { useTheme } from "next-themes";
 import { ReactNode, useEffect, useState } from "react";
+import Logo from "./Logo";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const { theme, setTheme } = useTheme();
@@ -13,8 +14,8 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div>
-      <div className="flex justify-between">
-        <div className="dark:text-blue-700">Sabir Chowdhury</div>
+      <div className="flex justify-between p-4">
+        <Logo />
         <label htmlFor="dark-mode-toggle" className="flex cursor-pointer">
           <input
             id="dark-mode-toggle"
