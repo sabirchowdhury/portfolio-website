@@ -2,26 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb-a: #0f2027;
+  --background-rgb-b: #141517;
+  --background-rgb-c: #060b04;
+  --background-rgb-d: #141e30;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb-a: #f5f7fa;
+  --background-rgb-b: #c3cfe2;
+  --background-rgb-c: #8e9eab;
+  --background-rgb-d: #e2d1c3;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    -45deg,
+    var(--background-rgb-a),
+    var(--background-rgb-b),
+    var(--background-rgb-c),
+    var(--background-rgb-d)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

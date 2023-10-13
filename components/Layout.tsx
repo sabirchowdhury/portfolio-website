@@ -7,6 +7,9 @@ import { ReactNode, useEffect, useState } from "react";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const { theme, setTheme } = useTheme();
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <div>
@@ -15,7 +18,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <label htmlFor="dark-mode-toggle" className="flex cursor-pointer">
           <input
             id="dark-mode-toggle"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => toggleTheme()}
             type="checkbox"
             className="hidden"
           />
