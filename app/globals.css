@@ -4,18 +4,18 @@
 
 :root.dark {
   --foreground-rgb: 255, 255, 255;
-  --background-rgb-a: #0f2027;
+  --background-rgb-a: #2f2027;
   --background-rgb-b: #141517;
   --background-rgb-c: #060b04;
-  --background-rgb-d: #141e30;
+  --background-rgb-d: #0a1e3a;
 }
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-rgb-a: #f5f7fa;
-  --background-rgb-b: #c3cfe2;
-  --background-rgb-c: #8e9eab;
-  --background-rgb-d: #e2d1c3;
+  --background-rgb-a: #c3dfc2;
+  --background-rgb-b: #f5f7fa;
+  --background-rgb-c: #f5f7fa;
+  --background-rgb-d: #aebece;
 }
 
 body {
