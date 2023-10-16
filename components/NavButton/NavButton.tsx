@@ -1,10 +1,11 @@
 import "./NavButton.css";
 import classnames from "classnames";
 import { ButtonHTMLAttributes } from "react";
+import Link from "next/link";
 
 interface TNavButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
-  link?: string;
+  link: string;
 }
 
 export default function NavButton({
@@ -14,10 +15,10 @@ export default function NavButton({
   ...props
 }: TNavButton) {
   return (
-    <a href={link}>
+    <Link href={link}>
       <button className={classnames("nav-underline", className)} {...props}>
         {text}
       </button>
-    </a>
+    </Link>
   );
 }
