@@ -8,7 +8,6 @@
   --background-rgb-b: #141517;
   --background-rgb-c: #060b04;
   --background-rgb-d: #0a1e3a;
-  --background-base: #181818;
 }
 
 :root {
@@ -17,12 +16,30 @@
   --background-rgb-b: #f5f7fa;
   --background-rgb-c: #f5f7fa;
   --background-rgb-d: #aebece;
-  --background-base: #cccccc;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--background-base);
-  background-size: 100% 100%;
+  background: linear-gradient(
+    -45deg,
+    var(--background-rgb-a),
+    var(--background-rgb-b),
+    var(--background-rgb-c),
+    var(--background-rgb-d)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
