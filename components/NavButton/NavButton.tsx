@@ -1,23 +1,26 @@
 import "./NavButton.css";
 import classnames from "classnames";
-import { ButtonHTMLAttributes } from "react";
-import Link from "next/link";
+import { ButtonHTMLAttributes, ReactNode, AnchorHTMLAttributes } from "react";
+import Link, { LinkProps } from "next/link";
 
 interface TNavButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string;
+  text: string | ReactNode;
   link: string;
+  linkProps?: Omit<LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
 }
 
 export default function NavButton({
   text,
   link,
   className,
+  linkProps,
   ...props
 }: TNavButton) {
   return (
-    <Link href={link}>
-      <button className={classnames("nav-underline", className)} {...props}>
+    <Link {...linkProps} href={link}>
+      <button className={classnames("nav-button", className)} {...props}>
         {text}
+        <div className="nav-underline" />
       </button>
     </Link>
   );

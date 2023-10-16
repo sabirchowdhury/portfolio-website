@@ -1,20 +1,18 @@
 "use client";
 
 import NavButton from "@/components/NavButton/NavButton";
+import useMounted from "@/utils/useMounted";
 import classnames from "classnames";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useMounted();
 
   return (
     <>
       <main className="flex flex-grow flex-col w-full items-center justify-center pb-20">
         <h1
           className={classnames(
-            "md:text-8xl text-6xl md:mb-6 mb-4 transition-opacity ease-in duration-500",
+            "md:text-8xl text-6xl md:mb-6 mb-4 mt-4 transition-opacity ease-in duration-500",
             {
               "opacity-0": !mounted,
               "opacity-100": mounted,

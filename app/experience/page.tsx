@@ -1,13 +1,11 @@
 "use client";
 
 import NavButton from "@/components/NavButton/NavButton";
+import useMounted from "@/utils/useMounted";
 import classnames from "classnames";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useMounted();
 
   return (
     <>

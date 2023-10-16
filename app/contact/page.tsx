@@ -1,53 +1,68 @@
 "use client";
 
 import NavButton from "@/components/NavButton/NavButton";
+import useMounted from "@/utils/useMounted";
 import classnames from "classnames";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Email, LinkedIn, GitHub } from "@mui/icons-material";
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useMounted();
 
   return (
     <>
-      <main className="flex flex-grow flex-col w-full items-center justify-center pb-20">
+      <main className="flex flex-grow flex-col w-full items-center pb-5">
         <h1
           className={classnames(
-            "md:text-8xl text-6xl md:mb-6 mb-4 transition-opacity ease-in duration-500",
+            "md:text-6xl text-4xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-500",
             {
               "opacity-0": !mounted,
               "opacity-100": mounted,
             }
           )}
         >
-          Welcome
+          Get in touch
         </h1>
-        <p
-          className={classnames(
-            "md:text-2xl text-xl text-center md:mb-10 mb-6 transition-opacity ease-in duration-500 delay-500",
-            {
-              "opacity-0": !mounted,
-              "opacity-100": mounted,
+
+        <div className="flex flex-col items-center justify-center my-auto py-4 md:text-3xl text-xl">
+          <NavButton
+            className="mt-12 rounded-sm"
+            text={
+              <span className="flex items-center gap-2">
+                <Email fontSize="inherit" /> Contact me via Email
+              </span>
             }
-          )}
-        >
-          I&apos;m Sabir, a software developer based in the UK.
-        </p>
-        <div
-          className={classnames(
-            "flex md:gap-12 gap-4 md:flex-row flex-col flex-wrap text-3xl text-center transition-opacity ease-in duration-500 delay-1000",
-            {
-              "opacity-0": !mounted,
-              "opacity-100": mounted,
+            link="mailto: m.sabir.chowdhury@gmail.com"
+          />
+          <NavButton
+            className="mt-12 rounded-sm"
+            text={
+              <span className="flex items-center gap-2">
+                <LinkedIn fontSize="inherit" /> Connect with me on Linkedin
+              </span>
             }
-          )}
-        >
-          <NavButton text="Experience" link="/experience" />
-          <NavButton text="Projects" link="/projects" />
-          <NavButton text="About" link="/about" />
-          <NavButton text="Contact" link="/contact" />
+            link="https://www.linkedin.com/in/sabir-chowdhury/"
+            linkProps={{ target: "_blank" }}
+          />
+          <NavButton
+            className="mt-12 rounded-sm"
+            text={
+              <span className="flex items-center gap-2">
+                <GitHub fontSize="inherit" /> Check out my GitHub
+              </span>
+            }
+            link="https://github.com/sabirchowdhury"
+            linkProps={{ target: "_blank" }}
+          />
         </div>
+        <p className="md:text-xl text-center mt-12">
+          Or email me at{" "}
+          <a
+            href="mailto: m.sabir.chowdhury@gmail.com"
+            className="underline-offset-2 underline"
+          >
+            m.sabir.chowdhury@gmail.com
+          </a>
+        </p>
       </main>
     </>
   );
