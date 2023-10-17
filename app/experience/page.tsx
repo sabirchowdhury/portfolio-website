@@ -2,50 +2,34 @@
 
 import NavButton from "@/components/NavButton/NavButton";
 import useMounted from "@/utils/useMounted";
-import classnames from "classnames";
+import classNames from "classnames";
+import { Email, LinkedIn, GitHub } from "@mui/icons-material";
+import ComponentInView from "@/components/ComponentInView";
 
-export default function Home() {
+export default function Experience() {
   const mounted = useMounted();
 
   return (
     <>
-      <main className="flex flex-grow flex-col w-full items-center justify-center pb-20">
+      <main className="flex flex-grow flex-col w-full items-center pb-5">
         <h1
-          className={classnames(
-            "md:text-8xl text-6xl md:mb-6 mb-4 transition-opacity ease-in duration-500",
+          className={classNames(
+            "md:text-6xl text-4xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-500 h-[1000px]",
             {
               "opacity-0": !mounted,
               "opacity-100": mounted,
             }
           )}
         >
-          Welcome
+          Experience
         </h1>
-        <p
-          className={classnames(
-            "md:text-2xl text-xl text-center md:mb-10 mb-6 transition-opacity ease-in duration-500 delay-500",
-            {
-              "opacity-0": !mounted,
-              "opacity-100": mounted,
-            }
-          )}
+        <ComponentInView
+          className="md:text-4xl text-2xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-1000"
+          onScrollEnterClass="opacity-100"
+          onScrollLeaveClass="opacity-0"
         >
-          I&apos;m Sabir, a software developer based in the UK.
-        </p>
-        <div
-          className={classnames(
-            "flex md:gap-12 gap-4 md:flex-row flex-col flex-wrap text-3xl text-center transition-opacity ease-in duration-500 delay-1000",
-            {
-              "opacity-0": !mounted,
-              "opacity-100": mounted,
-            }
-          )}
-        >
-          <NavButton text="Experience" link="/experience" />
-          <NavButton text="Projects" link="/projects" />
-          <NavButton text="About" link="/about" />
-          <NavButton text="Contact" link="/contact" />
-        </div>
+          <h2>Education</h2>
+        </ComponentInView>
       </main>
     </>
   );

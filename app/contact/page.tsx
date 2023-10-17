@@ -2,17 +2,17 @@
 
 import NavButton from "@/components/NavButton/NavButton";
 import useMounted from "@/utils/useMounted";
-import classnames from "classnames";
+import classNames from "classnames";
 import { Email, LinkedIn, GitHub } from "@mui/icons-material";
 
-export default function Home() {
+export default function Contact() {
   const mounted = useMounted();
 
   return (
     <>
       <main className="flex flex-grow flex-col w-full items-center pb-5">
         <h1
-          className={classnames(
+          className={classNames(
             "md:text-6xl text-4xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-500",
             {
               "opacity-0": !mounted,
@@ -23,7 +23,15 @@ export default function Home() {
           Get in touch
         </h1>
 
-        <div className="flex flex-col items-center justify-center my-auto py-4 md:text-3xl text-xl">
+        <div
+          className={classNames(
+            "flex flex-col items-center justify-center my-auto py-4 md:text-3xl text-xl transition-opacity ease-in duration-500 delay-500",
+            {
+              "opacity-0": !mounted,
+              "opacity-100": mounted,
+            }
+          )}
+        >
           <NavButton
             className="mt-12 rounded-sm"
             text={
@@ -54,7 +62,15 @@ export default function Home() {
             linkProps={{ target: "_blank" }}
           />
         </div>
-        <p className="md:text-xl text-center mt-12">
+        <p
+          className={classNames(
+            "md:text-xl text-center mt-12 transition-opacity ease-in duration-500 delay-500",
+            {
+              "opacity-0": !mounted,
+              "opacity-100": mounted,
+            }
+          )}
+        >
           Or email me at{" "}
           <a
             href="mailto: m.sabir.chowdhury@gmail.com"

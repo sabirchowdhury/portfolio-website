@@ -1,5 +1,5 @@
 import "./NavButton.css";
-import classnames from "classnames";
+import classNames from "classnames";
 import { ButtonHTMLAttributes, ReactNode, AnchorHTMLAttributes } from "react";
 import Link, { LinkProps } from "next/link";
 
@@ -18,7 +18,7 @@ export default function NavButton({
 }: TNavButton) {
   return (
     <Link {...linkProps} href={link}>
-      <button className={classnames("nav-button", className)} {...props}>
+      <button className={classNames("nav-button", className)} {...props}>
         {text}
         <div className="nav-underline" />
       </button>
