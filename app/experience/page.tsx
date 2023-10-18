@@ -14,7 +14,7 @@ export default function Experience() {
       <main className="flex flex-grow flex-col w-full items-center pb-5">
         <h1
           className={classNames(
-            "md:text-6xl text-4xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-500 h-[1000px]",
+            "md:text-6xl text-4xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-500 h-[3000px]",
             {
               "opacity-0": !mounted,
               "opacity-100": mounted,
