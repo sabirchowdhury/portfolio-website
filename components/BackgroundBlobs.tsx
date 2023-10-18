@@ -2,11 +2,13 @@
 
 import classNames from "classnames";
 import { ComponentProps, useLayoutEffect, useRef } from "react";
+import useWindowDimensions from "@/utils/windowDimensions";
 
 interface TBackgroundBlobs extends ComponentProps<"div"> {
   radial?: boolean;
   conic?: boolean;
   speed?: number;
+  respawnRatio?: number;
 }
 
 export default function BackgroundBlobs({
@@ -14,10 +16,14 @@ export default function BackgroundBlobs({
   radial,
   conic,
   speed = 2,
+  respawnRatio = 2,
   ...props
 }: TBackgroundBlobs) {
   const ref = useRef<HTMLDivElement>(null);
+  const { height } = useWindowDimensions();
   const updateAnimation = () => requestAnimationFrame(() => updateScroll());
+
+  const respawnHeight = respawnRatio * height;
 
   useLayoutEffect(() => {
     if (!!window) {
@@ -29,7 +35,9 @@ export default function BackgroundBlobs({
   const updateScroll = () => {
     if (!!ref?.current && !!window) {
       ref.current.style.transform =
-        "translate(0," + Math.floor(window.scrollY * speed) + "px)";
+        "translate(0," +
+        (Math.floor(window.scrollY * speed) % respawnHeight) +
+        "px)";
     }
   };
 
