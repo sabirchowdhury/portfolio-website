@@ -1,7 +1,7 @@
 "use client";
 
 import classNames from "classnames";
-import { ComponentProps, useEffect, useLayoutEffect, useRef } from "react";
+import { ComponentProps, useLayoutEffect, useRef } from "react";
 
 interface TBackgroundBlobs extends ComponentProps<"div"> {
   radial?: boolean;
@@ -37,10 +37,7 @@ export default function BackgroundBlobs({
     <div
       ref={ref}
       {...props}
-      className={classNames("absolute rounded-full blur-2xl -z-20", className, {
-        "bg-gradient-radial": radial,
-        "bg-gradient-conic": conic,
-      })}
+      className={classNames("absolute rounded-full -z-20", className, {})}
     />
   );
 }
