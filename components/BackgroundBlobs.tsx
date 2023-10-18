@@ -37,7 +37,10 @@ export default function BackgroundBlobs({
     <div
       ref={ref}
       {...props}
-      className={classNames("absolute rounded-full -z-20", className, {})}
+      className={classNames("absolute rounded-full -z-20", className, {
+        "bg-gradient-radial": radial,
+        "bg-gradient-conic": conic,
+      })}
     />
   );
 }
