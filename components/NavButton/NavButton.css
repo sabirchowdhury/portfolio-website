@@ -12,6 +12,7 @@
 
 .nav-button {
   overflow: hidden;
+  padding-top: 6px;
 }
 
 :is(.dark .nav-underline) {

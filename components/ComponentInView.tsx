@@ -29,7 +29,6 @@ export default function ComponentInView({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log(entry);
         setInView(entry.isIntersecting);
         if (entry.isIntersecting) {
           setIsViewed(true);

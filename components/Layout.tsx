@@ -7,18 +7,30 @@ import Switcher from "./Switcher";
 import BackgroundBlobs from "./BackgroundBlobs";
 import classNames from "classnames";
 import Background from "./Background";
+import { usePathname } from "next/navigation";
+import NavButton from "./NavButton/NavButton";
 
 export default function Layout({ children }: { children: ReactNode }) {
-  const { theme, setTheme } = useTheme();
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  const pathname = usePathname();
 
   return (
     <div className="flex flex-col min-h-full p-4">
       <Background />
-      <div className="flex justify-between items-center flex-wrap">
+      <div
+        className={classNames(
+          "flex justify-between items-center flex-wrap max-w-6xl w-full gap-4 mx-auto min-w-fit"
+        )}
+      >
         <Logo />
+        <NavButton text="Home" link="/" hidden={pathname === "/"} />
+        <NavButton
+          text="Experience"
+          link="/experience"
+          hidden={pathname === "/"}
+        />
+        <NavButton text="Projects" link="/projects" hidden={pathname === "/"} />
+        <NavButton text="About" link="/about" hidden={pathname === "/"} />
+        <NavButton text="Contact" link="/contact" hidden={pathname === "/"} />
         <Switcher />
       </div>
       {children}

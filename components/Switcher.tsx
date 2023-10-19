@@ -10,10 +10,7 @@ export default function Switcher() {
   };
 
   return (
-    <label
-      htmlFor="dark-mode-toggle"
-      className="flex cursor-pointer m-1 pl-1 ml-auto"
-    >
+    <label htmlFor="dark-mode-toggle" className="flex cursor-pointer m-1 pl-1">
       <input
         id="dark-mode-toggle"
         onClick={() => toggleTheme()}
