@@ -72,9 +72,9 @@ export default function Experience() {
             </p>
             <p>
               TypeScript, JavaScript, React, HTML, CSS, TailwindCSS, Remix,
-              PostgreSQL, Prisma, NodeJS, ExpressJS, Cypress, AWS,
-              Flightcontrol, Render, BlitzJS, Docker, NGINX, StoryBook,
-              StoryBlok (CMS), GitHub, Husky, CI/CD.
+              Babel, PostgreSQL, Prisma, NodeJS, ExpressJS, Cypress, AWS, Google
+              Cloud Services, Flightcontrol, Render, BlitzJS, Docker, NGINX,
+              StoryBook, StoryBlok (CMS), GitHub, Husky, CI/CD.
             </p>
           </div>
         </ComponentInView>

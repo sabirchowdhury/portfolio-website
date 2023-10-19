@@ -47,14 +47,14 @@ export default function BackgroundBlobs({
   );
 
   useLayoutEffect(() => {
-    if (!!window) {
+    if (typeof window !== "undefined") {
       window.addEventListener("scroll", updateAnimation);
       return () => window.removeEventListener("scroll", updateAnimation);
     }
   });
 
   const updateScroll = () => {
-    if (!!ref?.current && !!window) {
+    if (!!ref?.current && typeof window !== "undefined") {
       ref.current.style.transform =
         "translate(0," +
         ((Math.floor(window.scrollY * speed + offsetHeight(ref)) %

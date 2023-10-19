@@ -20,13 +20,16 @@ export default function NavButton({
 }: TNavButton) {
   return (
     <Link
-      className={classNames({
-        "invisible select-none pointer-events-none": !!hidden,
-      })}
+      className={classNames(
+        {
+          "invisible select-none pointer-events-none": !!hidden,
+        },
+        className
+      )}
       {...linkProps}
       href={link}
     >
-      <button className={classNames("nav-button", className)} {...props}>
+      <button className={classNames("nav-button")} {...props}>
         {text}
         <div className="nav-underline" />
       </button>
