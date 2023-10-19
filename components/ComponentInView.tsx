@@ -9,7 +9,7 @@ interface TComponentInView extends ComponentProps<"div"> {
   viewedClass?: ComponentProps<"div">["className"];
   notViewedClass?: ComponentProps<"div">["className"];
   observeOptions?: IntersectionObserverInit;
-  scrollRatio?: number;
+  threshold?: number;
 }
 
 export default function ComponentInView({
@@ -19,7 +19,7 @@ export default function ComponentInView({
   onScrollLeaveClass,
   className,
   observeOptions,
-  scrollRatio,
+  threshold,
   ...props
 }: TComponentInView) {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -27,18 +27,15 @@ export default function ComponentInView({
   const [isViewed, setIsViewed] = useState(false);
 
   useEffect(() => {
-    const rootMargin = `-${Math.floor(
-      (scrollRef?.current?.clientHeight || 0) / (scrollRatio || 0.5)
-    )}px`;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
+        console.log(entry);
         setInView(entry.isIntersecting);
         if (entry.isIntersecting) {
           setIsViewed(true);
         }
       },
-      { rootMargin, ...observeOptions }
+      { threshold, ...observeOptions }
     );
 
     if (!!scrollRef && !!scrollRef?.current) {
@@ -46,7 +43,7 @@ export default function ComponentInView({
     }
 
     return () => observer.disconnect();
-  }, [observeOptions, scrollRatio]);
+  }, [observeOptions, threshold]);
 
   return (
     <div
