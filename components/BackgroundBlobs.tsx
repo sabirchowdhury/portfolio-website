@@ -31,19 +31,19 @@ export default function BackgroundBlobs({
   ...props
 }: TBackgroundBlobs) {
   const ref = useRef<HTMLDivElement>(null);
-  const { initialHeight } = useWindowDimensions();
+  const { totalHeight } = useWindowDimensions();
   const updateAnimation = () => requestAnimationFrame(() => updateScroll());
 
   const respawnHeight = useCallback(
     (refObj: RefObject<HTMLDivElement>) =>
-      respawnRatio * initialHeight + (refObj?.current?.clientHeight || 0),
-    [respawnRatio, initialHeight]
+      respawnRatio * totalHeight + (refObj?.current?.clientHeight || 0),
+    [respawnRatio, totalHeight]
   );
   const offsetHeight = useCallback(
     (refObj: RefObject<HTMLDivElement>) =>
-      offset * initialHeight +
+      offset * totalHeight +
       (isBottom ? 0 : 1) * (refObj?.current?.clientHeight || 0),
-    [offset, initialHeight, isBottom]
+    [offset, totalHeight, isBottom]
   );
 
   useLayoutEffect(() => {

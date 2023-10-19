@@ -33,7 +33,7 @@ export default function Background() {
             "h-1/5 w-1/6 right-0 top-0",
             "from-yellow-300 to-transparent",
             "dark:bg-gradient-to-tr dark:from-transparent dark:to-orange-800",
-            "dark:opacity-20 opacity-40"
+            "dark:opacity-20 opacity-20"
           )}
           respawnRatio={2}
         />
