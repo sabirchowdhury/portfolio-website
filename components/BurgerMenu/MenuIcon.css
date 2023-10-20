@@ -1,0 +1,64 @@
+.menu-top,
+.menu-middle,
+.menu-bottom {
+  height: 2px;
+  width: 20px;
+  background-color: #000;
+  transition-duration: 500ms;
+  transition-property: transform opacity;
+  transition-timing-function: ease-in;
+}
+
+.menu-middle,
+.menu-bottom {
+  margin-top: 4px;
+}
+
+:is(.dark .menu-top),
+:is(.dark .menu-middle),
+:is(.dark .menu-bottom),
+:is(.dark .x-right),
+:is(.dark .x-left) {
+  background-color: #ccc;
+}
+
+.isChecked > .menu-top {
+  transform: translate(0, 21px);
+  opacity: 0;
+}
+.isChecked > .menu-middle {
+  transform: translate(0, 15px);
+  opacity: 0;
+}
+.isChecked > .menu-bottom {
+  transform: translate(0, 9px);
+  opacity: 0;
+}
+
+.x-right,
+.x-left {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: #000;
+  transition-duration: 500ms;
+  transition-property: transform opacity;
+  transition-timing-function: ease-in;
+  opacity: 0;
+}
+
+.x-right {
+  right: -2px;
+}
+.x-left {
+  left: -2px;
+}
+
+.isChecked > .x-right {
+  transform: translate(-15px) rotate(-45deg);
+  opacity: 100%;
+}
+.isChecked > .x-left {
+  transform: translate(15px) rotate(45deg);
+  opacity: 100%;
+}

@@ -1,12 +1,15 @@
 "use client";
 
-import { Menu, Close } from "@mui/icons-material";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import MenuIcon from "./MenuIcon";
 
-export default function BurgerMenu() {
-  const [isOpen, setIsOpen] = useState(false);
+interface TBurgerMenu {
+  isOpen: boolean;
+  setIsOpen: (newState: (prev: boolean) => boolean | boolean) => void;
+}
+
+export default function BurgerMenu({ isOpen, setIsOpen }: TBurgerMenu) {
   const pathname = usePathname();
 
   return (
@@ -17,7 +20,7 @@ export default function BurgerMenu() {
         })}
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        {isOpen ? <Close fontSize="inherit" /> : <Menu fontSize="inherit" />}
+        <MenuIcon isChecked={isOpen} />
       </button>
     </>
   );

@@ -1,16 +1,22 @@
 "use client";
 
 import { AutoAwesome, DarkMode, LightMode } from "@mui/icons-material";
+import classNames from "classnames";
 import { useTheme } from "next-themes";
 
-export default function Switcher() {
+export default function Switcher({ hidden }: { hidden: boolean }) {
   const { theme, setTheme } = useTheme();
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
-    <label htmlFor="dark-mode-toggle" className="flex cursor-pointer m-1 pl-1">
+    <label
+      htmlFor="dark-mode-toggle"
+      className={classNames("flex cursor-pointer m-1 pl-1", {
+        "hidden lg:block": hidden,
+      })}
+    >
       <input
         id="dark-mode-toggle"
         onClick={() => toggleTheme()}
