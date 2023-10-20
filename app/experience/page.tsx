@@ -13,10 +13,10 @@ export default function Experience() {
 
   return (
     <>
-      <main className="flex flex-grow flex-col w-full items-center p-4">
+      <main className="flex flex-grow flex-col mx-auto p-4 w-full max-w-4xl">
         <h1
           className={classNames(
-            "md:text-6xl text-4xl md:mb-10 mb-8 md:mt-8 transition-opacity ease-in duration-500",
+            "md:text-6xl text-4xl mx-auto md:mb-20 mb-8 md:mt-8 transition-opacity ease-in duration-500",
             {
               "opacity-0": !mounted,
               "opacity-100": mounted,
@@ -26,7 +26,7 @@ export default function Experience() {
           Experience
         </h1>
         <ComponentInView
-          className="md:mb-6 mb-4 transition-opacity ease-in duration-1000 md:p-8 w-full max-w-4xl"
+          className="md:mb-14 mb-12 transition-opacity ease-in duration-1000"
           viewedClass="opacity-100"
           notViewedClass="opacity-0"
           threshold={0.2}
@@ -40,12 +40,12 @@ export default function Experience() {
           ))}
         </ComponentInView>
         <ComponentInView
-          className="md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-1000"
+          className="md:mb-6 mb-4 transition-opacity ease-in duration-1000 md:py-8"
           viewedClass="opacity-100"
           notViewedClass="opacity-0"
           threshold={0.2}
         >
-          <h2 className="text-3xl">Education</h2>
+          <h2 className="text-2xl md:text-3xl mb-4 md:mb-10">Education </h2>
           <div className="p-4 rounded-md border border-white shadow-md">
             <h3 className="text-2xl">University of Bath</h3>
             <h3 className="text-2xl">
