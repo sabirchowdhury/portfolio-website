@@ -5,6 +5,8 @@ import useMounted from "@/utils/useMounted";
 import classNames from "classnames";
 import { Email, LinkedIn, GitHub } from "@mui/icons-material";
 import ComponentInView from "@/components/ComponentInView";
+import InfoBox from "./_content/InfoBox";
+import technicalExperience from "./_content/technicalExperience";
 
 export default function Experience() {
   const mounted = useMounted();
@@ -14,7 +16,7 @@ export default function Experience() {
       <main className="flex flex-grow flex-col w-full items-center p-4">
         <h1
           className={classNames(
-            "md:text-6xl text-4xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-500",
+            "md:text-6xl text-4xl md:mb-10 mb-8 md:mt-8 transition-opacity ease-in duration-500",
             {
               "opacity-0": !mounted,
               "opacity-100": mounted,
@@ -24,71 +26,32 @@ export default function Experience() {
           Experience
         </h1>
         <ComponentInView
-          className="md:text-4xl text-2xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-1000"
+          className="md:mb-6 mb-4 transition-opacity ease-in duration-1000 md:p-8 w-full max-w-4xl"
           viewedClass="opacity-100"
           notViewedClass="opacity-0"
           threshold={0.2}
         >
-          <h2>Technical Experience</h2>
-          <div>
-            <h3>Full stack developer</h3>
-            <h3>Wonders of Maths</h3>
+          <h2 className="text-2xl md:text-3xl mb-4 md:mb-10">
+            Technical Experience
+          </h2>
 
-            <p>
-              • Collaborated closely with founder and CTO to successfully launch
-              an ed-tech platform, used by many of the UK&apos;s largest
-              tutoring agencies and 200+ tutors/students globally.{" "}
-            </p>
-            <p>
-              {" "}
-              • Developed and deployed new features and intuitive UI components
-              such as smart notes and instant parent reports which cut usage
-              time by 40%.{" "}
-            </p>
-            <p>
-              {" "}
-              • Rebuilt Educai to utilise dynamic imports and SSR to slash
-              rendering speeds by 70% on average.{" "}
-            </p>
-            <p>
-              {" "}
-              • Significantly cut overheads by 7+ hours per week by facilitating
-              internal testing through UAT links with AWS, integrating Webflow
-              pages using NGINX and implementing REST APIs, GraphQL & AWS S3
-              buckets to enable features such as integration of a CMS, payments,
-              and document upload.{" "}
-            </p>
-            <p>
-              {" "}
-              • Displayed strong teamwork having comprehensively reviewed and
-              tested code from interns to senior developers & CTO in an agile
-              development system.{" "}
-            </p>
-            <p>
-              {" "}
-              • Upheld the quality and scalability of the codebase with industry
-              coding practices and through integration of TDD, BDD and CI/CD
-              methodologies whilst maintaining a rapid development approach.
-            </p>
-            <p>
-              TypeScript, JavaScript, React, HTML, CSS, TailwindCSS, Remix,
-              Babel, PostgreSQL, Prisma, NodeJS, ExpressJS, Cypress, AWS, Google
-              Cloud Services, Flightcontrol, Render, BlitzJS, Docker, NGINX,
-              StoryBook, StoryBlok (CMS), GitHub, Husky, CI/CD.
-            </p>
-          </div>
+          {technicalExperience.map((props, index) => (
+            <InfoBox {...props} key={`infobox-techexp-${index}`} />
+          ))}
         </ComponentInView>
         <ComponentInView
-          className="md:text-4xl text-2xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-1000"
+          className="md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-1000"
           viewedClass="opacity-100"
           notViewedClass="opacity-0"
           threshold={0.2}
         >
-          <h2>Education</h2>
-          <div>
-            <h3>University of Bath</h3>
-            <h3>(BSc) Computer Systems Engineering with Placement Year</h3>
-            <h3>2021-2022</h3>
+          <h2 className="text-3xl">Education</h2>
+          <div className="p-4 rounded-md border border-white shadow-md">
+            <h3 className="text-2xl">University of Bath</h3>
+            <h3 className="text-2xl">
+              (BSc) Computer Systems Engineering with Placement Year
+            </h3>
+            <h3 className="text-2xl">2021-2022</h3>
             <p>First-class honours (1st).</p>
             <p>Relevant Modules:</p>
             <p>Mathematics 1 & 2 (82% & 100%),</p>
@@ -101,7 +64,7 @@ export default function Experience() {
         </ComponentInView>
 
         <ComponentInView
-          className="md:text-4xl text-2xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-1000"
+          className="md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-1000"
           viewedClass="opacity-100"
           notViewedClass="opacity-0"
           threshold={0.2}
