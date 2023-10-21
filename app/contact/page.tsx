@@ -10,10 +10,10 @@ export default function Contact() {
 
   return (
     <>
-      <main className="flex flex-grow flex-col w-full items-center pb-5">
+      <main className="flex flex-grow flex-col mx-auto p-4 w-full max-w-4xl">
         <h1
           className={classNames(
-            "md:text-6xl text-4xl md:mb-6 mb-4 mt-8 transition-opacity ease-in duration-500",
+            "md:text-6xl text-4xl mx-auto md:mb-20 mb-10 md:mt-8 transition-opacity ease-in duration-500",
             {
               "opacity-0": !mounted,
               "opacity-100": mounted,
