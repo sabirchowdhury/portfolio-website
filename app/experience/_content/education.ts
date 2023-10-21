@@ -1,6 +1,6 @@
 const education = [
   {
-    title: "(BSc) Computer Systems Engineering with Placement Year",
+    title: "(BEng) Computer Systems Engineering with Placement Year",
     company: "University of Bath",
     dates: "2019 - 2023",
     preInfo: [`Graduated with First-class honours (1st)`, `Relevant modules:`],
