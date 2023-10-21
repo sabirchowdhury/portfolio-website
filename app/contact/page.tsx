@@ -25,7 +25,7 @@ export default function Contact() {
 
         <div
           className={classNames(
-            "flex flex-col items-center justify-center my-auto py-4 md:text-3xl text-xl transition-opacity ease-in duration-500 delay-500",
+            "flex flex-col gap-2 items-center justify-center md:text-2xl text-xl transition-opacity ease-in duration-300 delay-200",
             {
               "opacity-0": !mounted,
               "opacity-100": mounted,
@@ -33,7 +33,6 @@ export default function Contact() {
           )}
         >
           <NavButton
-            className="mt-12 rounded-sm"
             text={
               <span className="flex items-center gap-2">
                 <Email fontSize="inherit" /> Contact me via Email
@@ -42,7 +41,6 @@ export default function Contact() {
             link="mailto: m.sabir.chowdhury@gmail.com"
           />
           <NavButton
-            className="mt-12 rounded-sm"
             text={
               <span className="flex items-center gap-2">
                 <LinkedIn fontSize="inherit" /> Connect with me on Linkedin
@@ -52,7 +50,6 @@ export default function Contact() {
             linkProps={{ target: "_blank" }}
           />
           <NavButton
-            className="mt-12 rounded-sm"
             text={
               <span className="flex items-center gap-2">
                 <GitHub fontSize="inherit" /> Check out my GitHub
@@ -64,7 +61,7 @@ export default function Contact() {
         </div>
         <p
           className={classNames(
-            "md:text-xl text-center mt-12 transition-opacity ease-in duration-500 delay-500",
+            "md:text-xl text-center mt-8 transition-opacity ease-in duration-300 delay-200",
             {
               "opacity-0": !mounted,
               "opacity-100": mounted,
