@@ -47,7 +47,7 @@ const otherExperience = [
     company: "Co Operative",
     dates: "June 2016 - July 2016",
     bulletPoints: [
-      "Team working skills when stocking floor and serving customers, planned my day effectively.",
+      "Teamworking skills when stocking floor and serving customers, planned my day effectively.",
       "Demonstrated excellent communication skills when responding to customer queries.",
     ],
   },

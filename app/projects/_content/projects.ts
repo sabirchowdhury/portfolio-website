@@ -2,7 +2,7 @@ const projects = [
   {
     heading: "Webapp & RESTful API development (NextJS, C++, MySQL)",
     bulletPoints: [
-      "Used NextJS & Tailwind CSS to create and design the front-end of a car matching service .",
+      "Used NextJS & Tailwind CSS to create and design the front-end of a car matching service.",
       "Back-end built in C++ with Restbed library to develop API MySQL Connector to manage database.",
     ],
   },
