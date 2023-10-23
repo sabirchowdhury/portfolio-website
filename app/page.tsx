@@ -26,7 +26,7 @@ export default function Home() {
             </h1>
             <p
               className={classNames(
-                "md:text-2xl text-xl md:mb-6 mb-4 transition-opacity ease-in duration-500 delay-500 md:text-left text-center",
+                "md:text-2xl text-xl md:mb-6 mb-4 transition-opacity ease-in duration-500 delay-500 lg:text-left text-center",
                 {
                   "opacity-0": !mounted,
                   "opacity-100": mounted,
@@ -43,7 +43,7 @@ export default function Home() {
             </p>
             <div
               className={classNames(
-                "flex items-center md:gap-6 gap-4 md:flex-row flex-col flex-wrap text-3xl text-center transition-opacity ease-in duration-500 delay-1000",
+                "flex items-center justify-center lg:justify-start md:gap-6 gap-4 md:flex-row flex-col flex-wrap text-3xl text-center transition-opacity ease-in duration-500 delay-1000",
                 {
                   "opacity-0": !mounted,
                   "opacity-100": mounted,
@@ -59,10 +59,29 @@ export default function Home() {
               <NavButton text="Contact" link="/contact" />
             </div>
           </div>
-          <div className="bg-gradient-to-br relative from-blue-950 to-blue-700 dark:from-green-700 dark:to-emerald-600 flex items-center justify-center rounded-3xl w-[150px] h-[200px] min-w-[150px] md:w-[225px] md:h-[300px] md:min-w-[225px] xl:w-[300px] xl:h-[400px] xl:min-w-[300px]">
-            <div className="absolute -top-4 -left-4 bg-gradient-to-br from-sky-700 to-sky-600 dark:from-green-800 dark:to-emerald-700 flex items-center justify-center rounded-3xl w-[150px] h-[200px] min-w-[150px] md:w-[225px] md:h-[300px] md:min-w-[225px] xl:w-[300px] xl:h-[400px] xl:min-w-[300px]">
+          <div
+            className={classNames(
+              "bg-gradient-to-br relative from-blue-950 to-blue-700 dark:from-green-700 dark:to-emerald-600 flex items-center justify-center rounded-3xl",
+              "w-[150px] h-[200px] min-w-[150px] md:w-[225px] md:h-[300px] md:min-w-[225px] xl:w-[300px] xl:h-[400px] xl:min-w-[300px]",
+              "translate-all duration-300",
+              {
+                "-translate-y-96 opacity-0": !mounted,
+                "translate-y-0 opacity-100": mounted,
+              }
+            )}
+          >
+            <div
+              className={classNames(
+                "absolute xl:-top-4 xl:-left-4 md:-top-3 md:-left-3 -top-2 -left-2 flex items-center justify-center rounded-3xl",
+                "bg-gradient-to-br from-sky-700 to-sky-600 dark:from-green-800 dark:to-emerald-700",
+                "w-[150px] h-[200px] min-w-[150px] md:w-[225px] md:h-[300px] md:min-w-[225px] xl:w-[300px] xl:h-[400px] xl:min-w-[300px]",
+                "transition-all duration-300"
+              )}
+            >
               <div
-                className="bg-cover xl:w-[200px] xl:h-[200px] md:w-[150px] md:h-[150px] w-[100px] h-[100px] rounded-full"
+                className={classNames(
+                  "bg-cover xl:w-[200px] xl:h-[200px] md:w-[150px] md:h-[150px] w-[100px] h-[100px] rounded-full duration-300 transition-all"
+                )}
                 style={{ backgroundImage: "url(/profile.png)" }}
               />
             </div>
