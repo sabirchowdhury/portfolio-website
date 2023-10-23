@@ -33,7 +33,7 @@ export default function InfoBox({
       </h3>
       <span className="flex flex-col mt-2 gap-1 mb-2">
         {company && (
-          <h3 className="flex items-center text-sm md:text-lg gap-2 text-sky-700">
+          <h3 className="flex items-center text-sm md:text-lg gap-2 text-sky-700 dark:text-emerald-500">
             <Business fontSize="inherit" />
             {company}
           </h3>
