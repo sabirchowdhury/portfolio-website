@@ -1,7 +1,6 @@
 "use client";
 
 import classNames from "classnames";
-import { usePathname } from "next/navigation";
 import MenuIcon from "./MenuIcon";
 
 interface TBurgerMenu {
@@ -10,14 +9,10 @@ interface TBurgerMenu {
 }
 
 export default function BurgerMenu({ isOpen, setIsOpen }: TBurgerMenu) {
-  const pathname = usePathname();
-
   return (
     <>
       <button
-        className={classNames("md:ml-4 ml-2 text-4xl lg:hidden", {
-          hidden: pathname === "/",
-        })}
+        className={classNames("md:ml-4 ml-2 text-4xl lg:hidden")}
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <MenuIcon isChecked={isOpen} />

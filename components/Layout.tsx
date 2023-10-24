@@ -18,26 +18,23 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="flex flex-col min-h-full p-4 pt-24">
       <Background />
-      {pathname !== "/" && (
-        <div
-          className={classNames(
-            "fixed flex flex-col p-8 pt-16 inset-0 bg-zinc-300 dark:bg-neutral-800 z-[50] duration-500 ease-in-out lg:hidden overflow-y-scroll",
-            {
-              "-translate-y-full": !isOpen,
-            }
-          )}
-        >
-          {menuItems.map((props, index) => (
-            <NavButton
-              key={`nav-item-${index}`}
-              {...props}
-              onClick={() => setIsOpen(false)}
-              hidden={pathname === "/"}
-              className="text-4xl"
-            />
-          ))}
-        </div>
-      )}
+      <div
+        className={classNames(
+          "fixed flex flex-col p-8 pt-16 inset-0 bg-zinc-300 dark:bg-neutral-800 z-[50] duration-500 ease-in-out lg:hidden overflow-y-scroll",
+          {
+            "-translate-y-full": !isOpen,
+          }
+        )}
+      >
+        {menuItems.map((props, index) => (
+          <NavButton
+            key={`nav-item-${index}`}
+            {...props}
+            onClick={() => setIsOpen(false)}
+            className="text-4xl"
+          />
+        ))}
+      </div>
 
       <div
         className={classNames(
@@ -57,7 +54,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             }
           )}
         >
-          <Logo hidden={isOpen && pathname !== "/"} />
+          <Logo hidden={isOpen} hide={() => setIsOpen(false)} />
           {menuItems.map((props, index) => (
             <NavButton
               key={`nav-item-${index}`}
@@ -98,7 +95,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             className="hidden lg:block"
           /> */}
           <div className="flex items-center ml-auto lg:ml-0">
-            <Switcher hidden={isOpen && pathname !== "/"} />
+            <Switcher hidden={isOpen} />
             <BurgerMenu setIsOpen={setIsOpen} isOpen={isOpen} />
           </div>
         </div>
