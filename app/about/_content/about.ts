@@ -9,9 +9,9 @@ const about = [
     ],
   },
   {
-    heading: "Outside of the programming world",
+    heading: "Engineering",
     content: [
-      "In my spare time, I am always keeping myself busy. One of my standout hobbies is working with cars. Since my early years, I've held a deep fascination with these magnificent machines, marveling at the ingenious engineering that brings together countless engineering breakthroughs, all in perfect harmony to give us the automobiles we cherish and rely on for transportation.",
+      "In my spare time, I am always keeping myself busy. One of my standout hobbies is working with cars. Since my early years, I've held a deep fascination with these magnificent machines, and how the countless ingenious engineering breathroughs work all in perfect harmony to give us the automobiles we rely on for transportation.",
       "My journey as an automotive technician began at a young age, initially as a shared hobby with my father. Today, I take immense pride in my mechanical skills, operating as a freelance automotive technician.",
       "Before retirement, my father was a seasoned general engineer. He has always been a huge influence and is largely responsible for my practical skills. Together, we've accomplished various projects, including designing network topologies for businesses, handling mains electrical connections for both residential and commercial properties, constructing durable driveways for heavy usage, tiling and insulating roofs, and even crafting sturdy brick sheds, among many other achievements.",
     ],
@@ -19,9 +19,9 @@ const about = [
   {
     heading: "Hobbies & Entertainment",
     content: [
-      "While it may seem like I am always building something, in the times I am away from my tools I immerse myself in the beauties that the world has to offer. One of my favourite is experiencing different cultures and foods. I am fortunate to have a strong community where my neighbours are from all continents and corners of the world, and we frequently come together to share our culinary traditions and learn about each other's countries. Furthermore, I love discovering different culturally inspired restaurants and savoring street food in bustling markets. Any recommendations are always welcome!",
+      "While it may seem like I am always building something, in the times I am away from my tools I immerse myself in the beauties that the world has to offer. One of my favourite is experiencing different cultures and foods. I am fortunate to have a strong community where my neighbours are from all continents and corners of the world, and we frequently come together to share our culinary traditions and learn about each other's countries. Furthermore, I love discovering different culturally inspired restaurants, any recommendations are always welcome!",
       "Inspiring and sharing knowledge are among the many rewarding activities that I am passionate about. Throughout my career at both a startup and an investment fund, the realms of business strategy and investments have always interested me. Drawing from my experience, I regularly engage with young entrepreneurs, offering guidance on how to enhance their ideas and expand their businesses.",
-      "I haven't always been a fan of travelling until recent times after COVID. Ever since things have been getting back to normal, I had the oppotunity to visit the breathtaking natural beauties that the UK has to offer, without all the large crowds and honeypots. I have also recently visited Morocco which was the first time I visited a country with my university friends. I thoroughly enjoyed the experience and hopefully its the first of many to come.",
+      "I haven't always been a fan of travelling until recent times after COVID. Ever since things have been getting back to normal, I've built a huge appreciation for the breathtaking natural beauties both in the UK and around the world.",
       "Health and fitness are very important to me. I strictly workout a minimum 4 times a week. I also enjoy watching and competing in sports such as football and boxing. ",
     ],
   },

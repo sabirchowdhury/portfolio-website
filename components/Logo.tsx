@@ -7,7 +7,7 @@ export default function Logo({ hidden }: { hidden: boolean }) {
     <Link className={classNames({ "hidden lg:block": hidden })} href="/">
       <span className="flex items-center text-xl md:text-2xl my-2eid">
         <Terminal fontSize="inherit" />
-        <h1 className="font-extrabold mx-2">Sabir</h1>{" "}
+        <h1 className="font-extrabold ml-2 mr-1.5">Sabir</h1>{" "}
         <h1 className="font-light">Chowdhury</h1>
       </span>
     </Link>
