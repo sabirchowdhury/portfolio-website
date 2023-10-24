@@ -37,9 +37,9 @@ export default function Home() {
               <b className="text-2xl md:text-3xl dark:text-emerald-600 text-sky-800">
                 Sabir
               </b>
-              , a software developer with a background in electrical
-              engineering. Currently, I am based in the UK near London and I am
-              open to work.
+              , a software developer 👨🏽‍💻 with a background in electrical
+              engineering 🔧. Currently, I am based in the UK (near London 📍)
+              and I am open to work.
             </p>
             <div
               className={classNames(
