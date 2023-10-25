@@ -39,8 +39,6 @@ export default function Home() {
     projectTypes[]
   >(Object.values(projectTypes));
 
-  console.log(selectedProjectTypes);
-
   return (
     <main className="flex flex-grow flex-col mx-auto p-4 w-full max-w-4xl overflow-x-clip">
       <Heading text="Projects" />
@@ -93,23 +91,8 @@ export default function Home() {
         Filter By Project Type:
       </h2>
       <ComponentInView className="flex flex-wrap gap-2 mb-6">
-        {Object.values(projectTypes).map((key, filterIdx) => {
-          return (
-            <FilterButton
-              buttonText={key}
-              isSelected={selectedProjectTypes.includes(key)}
-              key={`filter-${filterIdx}`}
-              onClick={() =>
-                setSelectedProjectTypes((prev) =>
-                  !selectedProjectTypes.includes(key)
-                    ? [...prev, key]
-                    : prev.filter((prevKeys) => prevKeys !== key)
-                )
-              }
-            />
-          );
-        })}
         <FilterButton
+          className="w-28"
           buttonText={
             Object.values(projectTypes)
               .map((currentKey) => selectedProjectTypes.includes(currentKey))
@@ -132,6 +115,23 @@ export default function Home() {
             );
           }}
         />
+
+        {Object.values(projectTypes).map((key, filterIdx) => {
+          return (
+            <FilterButton
+              buttonText={key}
+              isSelected={selectedProjectTypes.includes(key)}
+              key={`filter-${filterIdx}`}
+              onClick={() =>
+                setSelectedProjectTypes((prev) =>
+                  !selectedProjectTypes.includes(key)
+                    ? [...prev, key]
+                    : prev.filter((prevKeys) => prevKeys !== key)
+                )
+              }
+            />
+          );
+        })}
       </ComponentInView>
       {projects
         .filter(({ type }) =>
