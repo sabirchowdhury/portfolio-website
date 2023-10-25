@@ -87,46 +87,49 @@ export default function Home() {
         ))}
       </ComponentInView>
 
-      <h2 className="mb-2 font-semibold text-sm text-gray-700 dark:text-slate-400">
+      <h2 className="mb-4 font-semibold text-sm text-gray-700 dark:text-slate-400">
         Filter By Project Type:
       </h2>
-      <label className="flex items-center gap-1 mb-2 text-sm cursor-pointer text-gray-700 dark:text-gray-400">
-        <input
-          type="checkbox"
-          checked={
-            !Object.values(projectTypes)
-              .map((currentKey) => selectedProjectTypes.includes(currentKey))
-              .includes(false)
-          }
-          onClick={() => {
-            setSelectedProjectTypes((prev) =>
-              Object.values(projectTypes)
-                .map((currentKey) => prev.includes(currentKey))
-                .includes(false)
-                ? Object.values(projectTypes)
-                : []
+
+      <ComponentInView className=" mb-6">
+        <div className="flex flex-wrap gap-2 mb-4">
+          {Object.values(projectTypes).map((key, filterIdx) => {
+            return (
+              <FilterButton
+                buttonText={key}
+                isSelected={selectedProjectTypes.includes(key)}
+                key={`filter-${filterIdx}`}
+                onClick={() =>
+                  setSelectedProjectTypes((prev) =>
+                    !selectedProjectTypes.includes(key)
+                      ? [...prev, key]
+                      : prev.filter((prevKeys) => prevKeys !== key)
+                  )
+                }
+              />
             );
-          }}
-        />
-        Select/Deselect All
-      </label>
-      <ComponentInView className="flex flex-wrap gap-2 mb-6">
-        {Object.values(projectTypes).map((key, filterIdx) => {
-          return (
-            <FilterButton
-              buttonText={key}
-              isSelected={selectedProjectTypes.includes(key)}
-              key={`filter-${filterIdx}`}
-              onClick={() =>
-                setSelectedProjectTypes((prev) =>
-                  !selectedProjectTypes.includes(key)
-                    ? [...prev, key]
-                    : prev.filter((prevKeys) => prevKeys !== key)
-                )
-              }
-            />
-          );
-        })}
+          })}
+        </div>
+        <label className="flex w-fit items-center gap-1 mb-2 text-sm cursor-pointer text-gray-700 dark:text-gray-400">
+          <input
+            type="checkbox"
+            checked={
+              !Object.values(projectTypes)
+                .map((currentKey) => selectedProjectTypes.includes(currentKey))
+                .includes(false)
+            }
+            onClick={() => {
+              setSelectedProjectTypes((prev) =>
+                Object.values(projectTypes)
+                  .map((currentKey) => prev.includes(currentKey))
+                  .includes(false)
+                  ? Object.values(projectTypes)
+                  : []
+              );
+            }}
+          />
+          Select/Deselect All
+        </label>
       </ComponentInView>
       <div className="flex flex-col w-full min-h-screen">
         {projects
