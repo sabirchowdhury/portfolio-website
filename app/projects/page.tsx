@@ -5,8 +5,30 @@ import NavButton from "@/components/NavButton/NavButton";
 import useMounted from "@/utils/useMounted";
 import classNames from "classnames";
 import projects from "./_content/projects";
-import TechIcons from "@/components/TechIcons";
+import TechIcons from "@/utils/techIcons";
 import TechTag from "@/components/TechTag";
+import { techs } from "@/utils/techs";
+import techIcons from "@/utils/techIcons";
+import Image from "next/image";
+
+const topSkills = [
+  techs.React,
+  techs.TypeScript,
+  techs.JavaScript,
+  techs.Python,
+  techs.Git,
+  techs.NextJS,
+  techs.C,
+  techs.PostgreSQL,
+  techs.CS,
+  techs.DotNet,
+  techs.Java,
+  techs.AWS,
+  techs.Azure,
+  techs.CPP,
+  techs.CSS,
+  techs.HTML,
+];
 
 export default function Home() {
   const mounted = useMounted();
@@ -37,6 +59,23 @@ export default function Home() {
           </div>
         ))}
       </div> */}
+      <h2 className="mb-2">Top Skills:</h2>
+      <div className="flex flex-wrap gap-2 mb-8">
+        {topSkills.map((skill, idx) => (
+          <div
+            key={`skill-tag-${idx}`}
+            className="flex gap-2 bg-slate-300 dark:bg-slate-600 py-1 px-2 rounded-md rounded-br-none rounded-tl-none"
+          >
+            <Image
+              width={24}
+              height={24}
+              src={techIcons[skill as keyof typeof techIcons]}
+              alt={`${skill}-logo`}
+            />
+            {skill}
+          </div>
+        ))}
+      </div>
 
       {projects.map(({ heading, bulletPoints, techs, extras }, index) => (
         <div key={`${index}-project`} className="mb-10 last:mb-0">

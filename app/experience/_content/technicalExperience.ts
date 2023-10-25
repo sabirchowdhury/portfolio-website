@@ -1,24 +1,60 @@
+import { techs } from "@/utils/techs";
+
 const technicalExperience = [
   {
     title: "Full Stack Developer",
     company: "Wonders of Maths/Educai",
     dates: "June 2021 - September 2022",
     preInfo: [
-      "Collaborated closely with founder and CTO to successfully launch an ed-tech platform, used by many of the UK's largest tutoring agencies and tutors/students globally.",
-      "Responsibilities:",
+      "I closely collaborated with the founder and CTO to successfully launch an ed-tech platform used by leading UK tutoring agencies and 1000+ tutors & students globally.",
+      "In my role I: developed and deployed interactive features; worked closely with product team; led major feature workflows and onboarded 4 new developers. My responsibilities also included maintaining industry coding standards and reviewing/testing code across the team.",
     ],
-    bulletPoints: [
-      "Developed and deployed interactive features and intuitive UI components.",
-      "Displayed strong teamwork in an agile development system: comprehensively reviewed and tested code from interns to senior developers & CTO. Worked closely with product team to iterate features.",
-      "Led large feature workflows which included: decomposing and distributing tasks; creating relational-database models; justifying use of particular APIs and libraries.",
-      "Upheld the quality and scalability of the codebase with industry coding practices and employed methodoligies such as CI/CD & behaviour-driven development.",
-      "Onboarded and trained 4 new developers.",
+    bulletPoints: [],
+    techs: [
+      {
+        type: "Front End & Testing: ",
+        tags: [
+          techs.TypeScript,
+          techs.JavaScript,
+          techs.React,
+          techs.HTML,
+          techs.CSS,
+          techs.TailwindCSS,
+          techs.Remix,
+          techs.Babel,
+          techs.Cypress,
+          "Behaviour-Driven Development",
+          techs.Husky,
+        ],
+      },
+      {
+        type: "Back End & Database: ",
+        tags: [
+          techs.NodeJS,
+          techs.ExpressJS,
+          techs.Remix,
+          techs.BlitzJS,
+          techs.PostgreSQL,
+          techs.Prisma,
+        ],
+      },
+
+      {
+        type: "Deployment, Services & Other: ",
+        tags: [
+          techs.AWS,
+          techs.Docker,
+          techs.GCS,
+          techs.NGINX,
+          techs.GitHub,
+          techs.Flightcontrol,
+          techs.Render,
+          techs.StoryBook,
+          techs.StoryBlok,
+          techs.CICD,
+        ],
+      },
     ],
-    languages:
-      "Technologies: TypeScript, JavaScript, React, HTML, CSS, TailwindCSS, Remix, \
-Babel, PostgreSQL, Prisma, NodeJS, ExpressJS, Cypress, AWS, Google \
-Cloud Services, Flightcontrol, Render, BlitzJS, Docker, NGINX, \
-StoryBook, StoryBlok (CMS), GitHub, Husky, CI/CD.",
   },
 ];
 

@@ -1,3 +1,4 @@
+import TechTag from "@/components/TechTag";
 import { Business, CalendarMonth } from "@mui/icons-material";
 import classNames from "classnames";
 
@@ -6,9 +7,10 @@ interface TInfoBox {
   company: string;
   dates: string;
   preInfo?: string[];
-  bulletPoints: string[];
+  bulletPoints?: string[];
   languages?: string;
   className?: string;
+  techs?: { type: string; tags: string[] }[];
 }
 
 export default function InfoBox({
@@ -19,6 +21,7 @@ export default function InfoBox({
   bulletPoints,
   languages,
   className,
+  techs,
 }: TInfoBox) {
   return (
     <div
@@ -38,7 +41,7 @@ export default function InfoBox({
             {company}
           </h3>
         )}
-        <h3 className="flex items-center text-sm md:text-md text-gray-600 dark:text-gray-400 gap-2 w-fit">
+        <h3 className="flex items-center text-sm text-gray-600 dark:text-gray-400 gap-2 w-fit">
           <CalendarMonth fontSize="inherit" />
           {dates}
         </h3>
@@ -50,11 +53,23 @@ export default function InfoBox({
           </p>
         ))}
       <ul className="flex flex-col gap-1 text-sm m-1 md:mb-4 md:mx-4">
-        {bulletPoints.map((text, index) => (
+        {bulletPoints?.map((text, index) => (
           <li key={`bp-${index}`}>{text}</li>
         ))}
       </ul>
       {languages && <p>{languages}</p>}
+      {techs?.map(({ type, tags }, idx) => (
+        <div className="mb-2 md:mb-4 last:mb-0" key={`tech-${idx}`}>
+          <p className="mb-1 font-semibold text-sm">{type}</p>
+          <div className="flex flex-wrap gap-2">
+            {tags.map((name, tagNo) => (
+              <TechTag className="w-fit text-sm" key={`tech-tag-${tagNo}`}>
+                {name}
+              </TechTag>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

@@ -25,6 +25,7 @@ export enum techs {
   StoryBook = "StoryBook",
   StoryBlok = "StoryBlok (CMS)",
   GitHub = "GitHub",
+  Git = "Git",
   Husky = "Husky",
   CICD = "CI/CD",
   CPP = "C++",
