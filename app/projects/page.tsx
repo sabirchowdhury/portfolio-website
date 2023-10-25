@@ -63,7 +63,7 @@ export default function Home() {
           </div>
         ))}
       </div> */}
-      <h2 className="mb-2 text-sm text-gray-700 dark:text-slate-400">
+      <h2 className="mb-2 font-semibold text-sm text-gray-700 dark:text-slate-400">
         Top Skills:
       </h2>
       <ComponentInView
@@ -87,20 +87,13 @@ export default function Home() {
         ))}
       </ComponentInView>
 
-      <h2 className="mb-2 text-sm text-gray-700 dark:text-slate-400">
+      <h2 className="mb-2 font-semibold text-sm text-gray-700 dark:text-slate-400">
         Filter By Project Type:
       </h2>
-      <ComponentInView className="flex flex-wrap gap-2 mb-6">
-        <FilterButton
-          className="w-28"
-          buttonText={
-            Object.values(projectTypes)
-              .map((currentKey) => selectedProjectTypes.includes(currentKey))
-              .includes(false)
-              ? "Select All"
-              : "Deselect All"
-          }
-          isSelected={
+      <label className="flex items-center gap-1 mb-2 text-sm cursor-pointer text-gray-700 dark:text-gray-400">
+        <input
+          type="checkbox"
+          checked={
             !Object.values(projectTypes)
               .map((currentKey) => selectedProjectTypes.includes(currentKey))
               .includes(false)
@@ -115,7 +108,9 @@ export default function Home() {
             );
           }}
         />
-
+        Select/Deselect All
+      </label>
+      <ComponentInView className="flex flex-wrap gap-2 mb-6">
         {Object.values(projectTypes).map((key, filterIdx) => {
           return (
             <FilterButton
@@ -133,49 +128,51 @@ export default function Home() {
           );
         })}
       </ComponentInView>
-      {projects
-        .filter(({ type }) =>
-          type.find((typeToFilter) =>
-            selectedProjectTypes.includes(typeToFilter)
+      <div className="flex flex-col w-full min-h-screen">
+        {projects
+          .filter(({ type }) =>
+            type.find((typeToFilter) =>
+              selectedProjectTypes.includes(typeToFilter)
+            )
           )
-        )
-        .map(({ heading, bulletPoints, techs, extras }, index) => (
-          <ComponentInView
-            threshold={0.2}
-            key={`${index}-project`}
-            className="mb-10 last:mb-0 duration-500"
-            onScrollEnterClass="translate-x-0"
-            onScrollLeaveClass="translate-x-28 opacity-40"
-          >
-            {heading && <h2 className="font-bold text-xl">{heading}</h2>}
-            <hr className="my-2 dark:border-neutral-600 border-neutral-400" />
-            <ul>
-              {bulletPoints.map((text, idx) => (
-                <li
-                  key={`${idx}-about-para`}
-                  className="mb-1.5 text-sm text-gray-700 dark:text-slate-400"
-                >
-                  {text}
-                </li>
-              ))}
-            </ul>
-            <div className="flex gap-2 flex-wrap mt-3">
-              {techs.map((tag, idx) => (
-                <TechTag key={`${idx}-tech-tag`}>{tag}</TechTag>
-              ))}
-              {extras.map((tag, idx) => (
-                <TechTag key={`${idx}-tech-extra-tag`}>{tag}</TechTag>
-              ))}
-            </div>
-          </ComponentInView>
-        ))}
-      {selectedProjectTypes.length === 0 && (
-        <div className="flex justify-center pt-10 text-xl h-96">
-          <span className="flex items-center gap-4 h-fit">
-            <FilterAltOffOutlined fontSize="inherit" /> No filters selected
-          </span>
-        </div>
-      )}
+          .map(({ heading, bulletPoints, techs, extras }, index) => (
+            <ComponentInView
+              threshold={0.2}
+              key={`${index}-project`}
+              className="mb-10 last:mb-0 duration-500"
+              onScrollEnterClass="translate-x-0"
+              onScrollLeaveClass="translate-x-28 opacity-40"
+            >
+              {heading && <h2 className="font-bold text-xl">{heading}</h2>}
+              <hr className="my-2 dark:border-neutral-600 border-neutral-400" />
+              <ul>
+                {bulletPoints.map((text, idx) => (
+                  <li
+                    key={`${idx}-about-para`}
+                    className="mb-1.5 text-sm text-gray-700 dark:text-slate-400"
+                  >
+                    {text}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex gap-2 flex-wrap mt-3">
+                {techs.map((tag, idx) => (
+                  <TechTag key={`${idx}-tech-tag`}>{tag}</TechTag>
+                ))}
+                {extras.map((tag, idx) => (
+                  <TechTag key={`${idx}-tech-extra-tag`}>{tag}</TechTag>
+                ))}
+              </div>
+            </ComponentInView>
+          ))}
+        {selectedProjectTypes.length === 0 && (
+          <div className="flex justify-center pt-10 text-xl h-96">
+            <span className="flex items-center gap-4 h-fit">
+              <FilterAltOffOutlined fontSize="inherit" /> No filters selected
+            </span>
+          </div>
+        )}
+      </div>
     </main>
   );
 }
