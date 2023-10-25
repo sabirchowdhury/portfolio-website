@@ -10,6 +10,7 @@ import TechTag from "@/components/TechTag";
 import { techs } from "@/utils/techs";
 import techIcons from "@/utils/techIcons";
 import Image from "next/image";
+import ComponentInView from "@/components/ComponentInView";
 
 const topSkills = [
   techs.React,
@@ -64,7 +65,7 @@ export default function Home() {
         {topSkills.map((skill, idx) => (
           <div
             key={`skill-tag-${idx}`}
-            className="flex gap-2 bg-slate-300 dark:bg-slate-600 py-1 px-2 rounded-md rounded-br-none rounded-tl-none"
+            className="flex items-center gap-2 bg-slate-300 dark:bg-slate-600 py-1 px-2 rounded-md rounded-br-none rounded-tl-none"
           >
             <Image
               width={24}
@@ -78,14 +79,20 @@ export default function Home() {
       </div>
 
       {projects.map(({ heading, bulletPoints, techs, extras }, index) => (
-        <div key={`${index}-project`} className="mb-10 last:mb-0">
+        <ComponentInView
+          threshold={0.2}
+          key={`${index}-project`}
+          className="mb-10 last:mb-0 duration-500"
+          onScrollEnterClass="translate-x-0"
+          onScrollLeaveClass="translate-x-28 opacity-40"
+        >
           {heading && <h2 className="font-bold text-xl">{heading}</h2>}
           <hr className="my-2 dark:border-neutral-600 border-neutral-400" />
           <ul>
             {bulletPoints.map((text, idx) => (
               <li
                 key={`${idx}-about-para`}
-                className="mb-1.5 text-sm text-gray-800 dark:text-slate-400"
+                className="mb-1.5 text-sm text-gray-700 dark:text-slate-400"
               >
                 {text}
               </li>
@@ -99,7 +106,7 @@ export default function Home() {
               <TechTag key={`${idx}-tech-extra-tag`}>{tag}</TechTag>
             ))}
           </div>
-        </div>
+        </ComponentInView>
       ))}
     </main>
   );
