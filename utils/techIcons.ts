@@ -21,4 +21,6 @@ const techIcons = {
   [techs.TypeScript]: "/typescript.png",
 };
 
+export type techIconKeys = keyof typeof techIcons;
+
 export default techIcons;

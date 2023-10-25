@@ -1,13 +1,15 @@
 import { techs } from "@/utils/techs";
 
 export enum projectTypes {
-  App = "App development",
-  Web = "Web development",
+  App = "App Development",
+  Web = "Web Development",
   Computational = "Computational",
-  Service = "Service development",
-  Hardware = "Hardware",
-  Electonics = "Electronics",
+  Service = "Service Development",
+  Hardware = "Hardware Programming",
+  Electonics = "Electronics & Engineering",
 }
+
+export type projectTypeKeys = keyof typeof projectTypes;
 
 const projects = [
   {
@@ -107,8 +109,8 @@ const projects = [
       "Assessed the completeness of my team's work with server tests and conducted continuity tests.",
     ],
     techs: [],
-    extras: ["Electronics", "Hardware", "Networks", "Network Topologies"],
-    type: [projectTypes.Electonics, projectTypes.Hardware],
+    extras: ["Electronics", "Networks", "Network Topologies"],
+    type: [projectTypes.Electonics],
   },
   {
     heading: "CPU Design with VGA Output on an ALU",
