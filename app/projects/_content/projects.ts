@@ -16,7 +16,8 @@ const projects = [
     heading: "Car Match Service in Restbed",
     bulletPoints: [
       "Used NextJS & Tailwind CSS to create and design the front-end of a car matching service.",
-      "Back-end built in C++ with Restbed library to develop API MySQL Connector to manage database.",
+      "REST API & back end built in C++ with Restbed library",
+      "MySQL used to create and manage a complex relational database model. MySQL Connector/C++ library used to dynamically retrieve and create data.",
     ],
     techs: [techs.CPP, techs.MySQL, techs.NextJS, techs.TailwindCSS],
     extras: [],
